@@ -19,6 +19,6 @@ export function useTelegram() {
         onToggleButton,
         onClose, 
         tg,
-        user: tg.initDataUnsafe?.user /* (данные о пользователе из встроенного tg обьекта(initData - просто строка, initDataUnsafe - распаршенная, при входе пользователя будем отображать его имя)) */
+        user: tg?.initDataUnsafe?.user /* (данные о пользователе из встроенного tg обьекта(initData - просто строка, initDataUnsafe - распаршенная, при входе пользователя будем отображать его имя)) */
     }   
 }

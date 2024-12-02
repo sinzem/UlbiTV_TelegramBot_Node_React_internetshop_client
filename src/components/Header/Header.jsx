@@ -12,6 +12,7 @@ const Header = () => {
             <span className={"username"}>
                 {user} {/* (выводим на пользователя данные о нем(получили в хуке из обьекта tg)) */}
             </span>
+            Hello World!
         </div>
     );
 };
