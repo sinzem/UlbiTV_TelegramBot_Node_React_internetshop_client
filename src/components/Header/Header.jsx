@@ -1,10 +1,10 @@
 import "./header.css";
-import {user, onClose} from "../../hooks/useTelegram.js";
+import {useTelegram} from "../../hooks/useTelegram";
 import Button from "../Button/Button";
 
 const Header = () => {
 
-    // const {user, onClose} = useTelegram(); /* (получаем сущности из хука для работы с обьектом tg) */
+    const {user, onClose} = useTelegram(); /* (получаем сущности из хука для работы с обьектом tg) */
 
     return (
         <div className={"header"}> 
