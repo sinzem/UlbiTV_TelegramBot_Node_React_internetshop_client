@@ -1,8 +1,8 @@
 /* (хук для более удобной работы с обьектом TG) */
-const tg = window.Telegram.WebApp; /* (подключаем обьект телеграмма) */
-
 export function useTelegram() {
     
+    const tg = window.Telegram.WebApp; /* (подключаем обьект телеграмма) */
+
     const onClose = () => { /* (функция закрытия) */
         tg.close(); /* (закрываем с помощью встроенного метода) */ 
     }
