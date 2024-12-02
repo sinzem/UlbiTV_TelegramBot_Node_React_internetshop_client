@@ -4,9 +4,11 @@ import './App.css';
 import {useTelegram} from "./hooks/useTelegram"; /* (подключаем хук для работы с tg-обьектом) */
 import Header from './components/Header/Header';
 
+const tg = window.Telegram.WebApp; 
+
 function App() {
 
-  const {tg, onToggleButton} = useTelegram();
+  const {onToggleButton} = useTelegram();
 
   useEffect(() => {
     tg.ready(); /* (вызываем для обозначения готовности работы TG - проинициализировалось и можно отрисовывать) */
