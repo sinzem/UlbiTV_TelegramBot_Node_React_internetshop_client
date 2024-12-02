@@ -1,5 +1,5 @@
 import "./header.css";
-import { useTelegram } from "../../hooks/useTelegram";
+import { useTelegram } from "../../hooks/useTelegram.js";
 import Button from "../Button/Button";
 
 const Header = () => {
