@@ -1,12 +1,10 @@
 import { useEffect } from 'react';
 import './App.css';
-// import { useTelegram } from "./hooks/useTelegram"; /* (подключаем хук для работы с tg-обьектом - у меня не работает) */
 import Header from './components/Header/Header';
 
 function App() {
 
   const tg = window.Telegram.WebApp;
-  // const {onToggleButton} = useTelegram();
 
   const onToggleButton = () => { /* (функция для показа/скрытия встроенной кнопки tg, используем встроенные методы(подробнее в документации)) */
     if (tg.MainButton.isVisible) {
