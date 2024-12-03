@@ -1,7 +1,6 @@
 
-
 /* (хук для более удобной работы с обьектом TG) */
-export default function useTelegram() {
+export function useTelegram() {
 
     const tg = window.Telegram.WebApp; /* (подключаем обьект телеграмма) */
     
