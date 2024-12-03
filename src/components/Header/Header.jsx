@@ -10,7 +10,7 @@ const Header = () => {
         <div className={"header"}> 
             <Button onClick={onClose}>Close</Button>
             <span className={"username"}>
-                {user} {/* (выводим на пользователя данные о нем(получили в хуке из обьекта tg)) */}
+                {user?.username} {/* (выводим на пользователя данные о нем(получили в хуке из обьекта tg)) */}
             </span>
             Hello World!
         </div>
