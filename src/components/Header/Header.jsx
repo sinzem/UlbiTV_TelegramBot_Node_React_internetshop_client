@@ -1,13 +1,15 @@
 import "./header.css";
 import Button from "../Button/Button";
+import {useTelegram} from "../../hooks/useTelegram";
 
 const Header = () => {
 
-    const tg = window.Telegram.WebApp;
+    const {tg, onClose} = useTelegram();
+    // const tg = window.Telegram.WebApp;
 
-    const onClose = () => { /* (функция закрытия) */
-        tg.close(); /* (закрываем с помощью встроенного метода) */ 
-    }
+    // const onClose = () => { /* (функция закрытия) */
+    //     tg.close(); /* (закрываем с помощью встроенного метода) */ 
+    // }
 
     return (
         <div className={"header"}> 

@@ -1,18 +1,21 @@
 import { useEffect } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
+import { useTelegram } from './hooks/useTelegram';
 
 function App() {
 
-  const tg = window.Telegram.WebApp;
+  const {tg, onToggleButton} = useTelegram();
 
-  const onToggleButton = () => { /* (функция для показа/скрытия встроенной кнопки tg, используем встроенные методы(подробнее в документации)) */
-    if (tg.MainButton.isVisible) {
-        tg.MainButton.hide();
-    } else {
-        tg.MainButton.show();
-    }
-}
+//   const tg = window.Telegram.WebApp;
+
+//   const onToggleButton = () => { /* (функция для показа/скрытия встроенной кнопки tg, используем встроенные методы(подробнее в документации)) */
+//     if (tg.MainButton.isVisible) {
+//         tg.MainButton.hide();
+//     } else {
+//         tg.MainButton.show();
+//     }
+// }
 
   useEffect(() => {
     // tg.ready(); /* (вызываем для обозначения готовности работы TG - проинициализировалось и можно отрисовывать) */
