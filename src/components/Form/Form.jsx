@@ -10,16 +10,16 @@ const Form = () => {
     const [subject, setSubject] = useState("physical");
 
     useEffect(() => {
-        tg.MainButton.setParams({
+        tg.BottomButton.setParams({
             text: "Отправить данные"
         })
     }, [])
 
     useEffect(() => {
         if(!street || !country) {
-            tg.MainButton.hide();
+            tg.BottomButton.hide();
         } else {
-            tg.MainButton.show();
+            tg.BottomButton.show();
         }
     }, [country, street])
 
