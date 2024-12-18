@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react";
 import "./form.css";
 
-const Form = () => {
+const tg = window.Telegram.WebApp;
 
-    const tg = window.Telegram.WebApp;
+const Form = () => {
 
     const [country, setCountry] = useState("");
     const [street, setStreet] = useState("");
