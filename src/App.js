@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+
 import {Routes, Route} from "react-router-dom";
 import './App.css';
 import Header from './components/Header/Header';
@@ -7,8 +7,9 @@ import Form from './components/Form/Form';
 
 
 function App() {
-  
-  const tg = window.Telegram.WebApp;
+
+
+
 
   return (
     <div className="App">
