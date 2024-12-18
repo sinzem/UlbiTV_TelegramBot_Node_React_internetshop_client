@@ -17,7 +17,6 @@ const Header = () => {
             <span className={"username"}>
                 {tg?.initDataUnsafe?.user?.username} {/* (выводим на пользователя данные о нем(получили из обьекта tg)) */}
             </span>
-            Hello World!
         </div>
     );
 };
