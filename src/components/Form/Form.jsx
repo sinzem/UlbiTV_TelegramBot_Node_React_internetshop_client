@@ -10,9 +10,7 @@ const Form = () => {
     const [subject, setSubject] = useState("physical");
 
     useEffect(() => {
-        tg.BottomButton.setParams({
-            text: "Отправить данные"
-        })
+        tg.BottomButton.setText("Отправить данные")
     }, [])
 
     useEffect(() => {
