@@ -10,14 +10,14 @@ const Form = () => {
     const [subject, setSubject] = useState("physical");
 
     useEffect(() => {
-        tg.BottomButton.setText("Отправить данные")
+        tg.MainButton.setText("Отправить данные")
     }, [])
 
     useEffect(() => {
         if(!street || !country) {
-            tg.BottomButton.hide();
+            tg.MainButton.hide();
         } else {
-            tg.BottomButton.show();
+            tg.MainButton.show();
         }
     }, [country, street])
 
