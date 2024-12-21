@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import "./form.css";
 
 const tg = window.Telegram.WebApp;
@@ -9,8 +9,24 @@ const Form = () => {
     const [street, setStreet] = useState("");
     const [subject, setSubject] = useState("physical");
 
+    const onSendData = useCallback(() => {
+        const data = {
+            country,
+            street,
+            subject
+        }
+        tg.sendData(JSON.stringify(data));
+    }, [country, street, subject])
+
     useEffect(() => {
-        tg.MainButton.setText("Отправить данные")
+        tg.onEvent("mainButtonClicked", onSendData)
+        return () => {
+            tg.offEvent("mainButtonClicked", onSendData)
+        }
+    }, [onSendData])
+
+    useEffect(() => {
+        tg.MainButton.setText("Send data")
     }, [])
 
     useEffect(() => {
