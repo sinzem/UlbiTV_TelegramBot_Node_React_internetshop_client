@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 import ProductItem from "../ProductItem/ProductItem";
 import "./productList.css";
 
@@ -24,6 +24,30 @@ const getTotalPrice = (items = []) => {
 const ProductList = () => {
 
     const [addedItems, setAddedItems] = useState([]);
+
+    const queryId = tg.initDataUnsafe?.query_id;
+
+    const onSendData = useCallback(() => {
+        const data = {
+            queryId,
+            products: addedItems,
+            totalPrice: getTotalPrice(addedItems)
+        };
+        fetch("http://localhost:8000", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(data)
+        });
+    }, [])
+
+    useEffect(() => {
+        tg.onEvent("mainButtonClicked", onSendData)
+        return () => {
+            tg.offEvent("mainButtonClicked", onSendData)
+        }
+    }, [onSendData])
 
     const onAdd = (product) => {
         const alreadyAdded = addedItems.find(item => item.id === product.id);
@@ -59,3 +83,4 @@ const ProductList = () => {
 };
 
 export default ProductList;
+
